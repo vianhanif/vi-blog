@@ -1,6 +1,6 @@
 import React from "react"
 import { Link, graphql } from "gatsby"
-
+import { Disqus, CommentCount } from 'gatsby-plugin-disqus'
 import Bio from "../components/bio"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
@@ -9,8 +9,14 @@ import { rhythm, scale } from "../utils/typography"
 class BlogPostTemplate extends React.Component {
   render() {
     const post = this.props.data.markdownRemark
+    const config = this.props.data.site
     const siteTitle = this.props.data.site.siteMetadata.title
     const { previous, next } = this.props.pageContext
+    let disqusConfig = {
+      url: `${config.siteUrl+this.props.location.pathname}`,
+      identifier: post.id,
+      title: post.title,
+    }
 
     return (
       <Layout location={this.props.location} title={siteTitle}>
@@ -45,7 +51,9 @@ class BlogPostTemplate extends React.Component {
             }}
           />
           <footer>
+            <CommentCount config={disqusConfig} placeholder={'...'} />
             <Bio />
+            <Disqus config={disqusConfig} />
           </footer>
         </article>
 
@@ -87,6 +95,7 @@ export const pageQuery = graphql`
     site {
       siteMetadata {
         title
+        siteUrl
       }
     }
     markdownRemark(fields: { slug: { eq: $slug } }) {
