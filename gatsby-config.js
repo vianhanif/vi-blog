@@ -1,11 +1,11 @@
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Starter Blog`,
-    author: `Kyle Mathews`,
-    description: `A starter blog demonstrating what Gatsby can do.`,
-    siteUrl: `https://gatsby-starter-blog-demo.netlify.com/`,
+    title: `Ananda's Blog`,
+    author: `Alvian Rahman Hanif`,
+    description: `Ananda Collection of Stories`,
+    siteUrl: `https://blog.ananda.family/`,
     social: {
-      twitter: `kylemathews`,
+      twitter: `twit_vianhanif`,
     },
   },
   plugins: [
@@ -72,6 +72,12 @@ module.exports = {
       options: {
         pathToConfigModule: `src/utils/typography`,
       },
+    },
+    {
+      resolve: `gatsby-plugin-disqus`,
+      options: {
+        shortname: `ananda-family`
+      }
     },
     `gatsby-plugin-netlify-cms`,
     // this (optional) plugin enables Progressive Web App + Offline functionality
