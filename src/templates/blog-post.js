@@ -9,7 +9,7 @@ import { rhythm, scale } from "../utils/typography"
 class BlogPostTemplate extends React.Component {
   render() {
     const post = this.props.data.markdownRemark
-    const config = this.props.data.site
+    const config = this.props.data.site.siteMetadata
     const siteTitle = this.props.data.site.siteMetadata.title
     const { previous, next } = this.props.pageContext
     let disqusConfig = {
@@ -41,7 +41,7 @@ class BlogPostTemplate extends React.Component {
                 marginBottom: rhythm(1),
               }}
             >
-              {post.frontmatter.date}
+              <CommentCount config={disqusConfig} placeholder={'0 Comment'} /> - {post.frontmatter.date}
             </p>
           </header>
           <section dangerouslySetInnerHTML={{ __html: post.html }} />
@@ -51,7 +51,6 @@ class BlogPostTemplate extends React.Component {
             }}
           />
           <footer>
-            <CommentCount config={disqusConfig} placeholder={'...'} />
             <Bio />
             <Disqus config={disqusConfig} />
           </footer>
