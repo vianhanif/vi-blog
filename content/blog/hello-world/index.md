@@ -1,7 +1,8 @@
 ---
 title: Hello World
 date: "2015-05-01T22:12:03.284Z"
-description: "Hello World"
+description: "A salted duck egg is a Chinese preserved food product made by soaking duck eggs in brine, or packing each egg in damp, salted charcoal"
+image: "https://www.bigstockphoto.com/images/homepage/module-6.jpg"
 ---
 
 This is my first post on my new fake blog! How exciting!

@@ -7,13 +7,14 @@ public_folder: /img
 collections:
   - name: "blog"
     label: "Articles"
-    folder: "content/articles"
+    folder: "content/blog"
     create: true
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
     editor:
      preview: true
     fields:
       - { label: "Title", name: "title", widget: "string" }
+      - { lable: "Cover", name: "Cover Image", widget: "image", allow_multiple: false}
       - { label: "Publish Date", name: "date", widget: "datetime" }
       - { label: "Description", name: "description", widget: "string" }
       - { label: "Body", name: "body", widget: "markdown" }
