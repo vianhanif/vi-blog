@@ -44,7 +44,7 @@
     "typography-theme-wordpress-2016": "^0.16.19"
   },
   "devDependencies": {
-    "node-sass": "^4.13.1",
+    "node-sass": "^7.0.0",
     "prettier": "^1.19.1"
   },
   "homepage": "https://blog.ananda.family",
